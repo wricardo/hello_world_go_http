@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/go-chi/chi"
@@ -10,7 +11,7 @@ import (
 func main() {
 	s := NewServer()
 
-	http.ListenAndServe(":3333", s.Handler())
+	log.Fatal(http.ListenAndServe(":3333", s.Handler()))
 }
 
 type Server struct {
@@ -37,5 +38,5 @@ func (s *Server) Handler() http.Handler {
 }
 
 func (s *Server) HandleIndex(rw http.ResponseWriter, r *http.Request) {
-	rw.Write([]byte("hello ci"))
+	rw.Write([]byte("hello ci")) //nolint: errcheck
 }
