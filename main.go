@@ -37,5 +37,5 @@ func (s *Server) Handler() http.Handler {
 }
 
 func (s *Server) HandleIndex(rw http.ResponseWriter, r *http.Request) {
-	rw.Write([]byte("hello world"))
+	rw.Write([]byte("hello ci"))
 }
