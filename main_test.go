@@ -25,5 +25,5 @@ func TestMain(t *testing.T) {
 		log.Fatal(err)
 	}
 
-	require.Equal(t, "hello world", string(greeting))
+	require.Equal(t, "hello ci", string(greeting))
 }
