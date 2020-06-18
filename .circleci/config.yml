@@ -48,15 +48,16 @@ jobs:
       - run: golangci-lint run ./...
 
 workflows:
+  version: 2
   build-deploy:
-  jobs:
-    - test:
-        filters:
-          branches:
-            ignore:
-              - master
-    - lint:
-        filters:
-          branches:
-            ignore:
-              - master
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore:
+                - master
+      - lint:
+          filters:
+            branches:
+              ignore:
+                - master
